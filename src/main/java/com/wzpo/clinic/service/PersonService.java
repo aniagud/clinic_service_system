@@ -49,4 +49,46 @@ public class PersonService {
     }
 
     public Boolean existsPersonById(Integer id) { return personRepository.findById(id).isPresent(); }
+
+
+    // adding new person if pesel doesn't exist
+    @Transactional
+    public void addPerson(PersonDTO dto){
+
+        if(!existsPersonByPesel(dto.getPesel()) ){
+
+            personRepository.save(Person.builder()
+                    .name(dto.getName())
+                    .surname(dto.getSurname())
+                    .pesel(dto.getPesel())
+                    .gender(dto.getGender())
+                    .address(dto.getAddress())
+                    .birthDate(dto.getBirthDate())
+                    .birthPlace(dto.getBirthPlace())
+                    .role(dto.getRole())
+                    .build());
+        }
+    }
+
+
+    //updating a person in DB
+    @Transactional
+    public void updatePerson(Person person){
+
+        if (existsPersonById(person.getId())){
+
+            personRepository.save(person);
+        }
+    }
+
+
+    //deleting a person in DB
+    @Transactional
+    public void deletePerson(Person person){
+
+        if(existsPersonById(person.getId())){
+
+            personRepository.delete(person);
+        }
+    }
 }
