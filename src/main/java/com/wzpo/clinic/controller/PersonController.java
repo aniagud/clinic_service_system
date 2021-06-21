@@ -26,7 +26,30 @@ public class PersonController {
 
     @GetMapping("/all")
 //    @PreAuthorize("hasRole('ADMIN')")
-    public List<Person> getAllCategories(){
+    public List<Person> getAllPerson(){
         return personService.getAllPerson();
     }
+
+
+    @GetMapping("/name/{name}")
+    public List<Person> showPersonByName(@PathVariable("name") String name){
+
+        return (personService.getPersonByName(name));
+    }
+
+    @GetMapping("/surname/{surname}")
+    public List<Person> showPersonBySurname(@PathVariable("surname") String surname){
+
+        return(personService.getPersonBySurname(surname));
+    }
+
+    @GetMapping("/pesel/{pesel}")
+    public Person showPersonByPesel(@PathVariable("pesel") String pesel){
+
+        Person person = personService.getPersonByPesel(pesel)
+                .orElseThrow( () -> new IllegalArgumentException("Invalid category name: " + pesel));
+
+        return person;
+    }
+
 }

@@ -28,4 +28,19 @@ public class Person {
     @Column(name = "gender")
     private String gender;
 
+    @Column(name = "pesel")
+    private String pesel;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "birthDate")
+    private String birthDate;
+
+    @Column(name = "birthPlace")
+    private String birthPlace;
+
+    @Column(name = "role")
+    private String role;
+
 }

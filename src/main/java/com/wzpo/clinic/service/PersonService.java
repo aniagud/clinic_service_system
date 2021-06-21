@@ -23,17 +23,29 @@ public class PersonService {
         return personRepository.findAll();
     }
 
-    public Optional<Person> getPersonByName(String name){
-        return personRepository.findOneByName(name);
+    public List<Person> getAllPersonByRole(String role){
+        return personRepository.findAllByRole(role);
     }
 
-    public Optional<Person> getPersonBySurname(String surname){
-        return personRepository.findOneBySurname(surname);
+    public List<Person> getPersonByName(String name){
+        return personRepository.findAllByName(name);
+    }
+
+    public List<Person> getPersonBySurname(String surname){
+        return personRepository.findAllBySurname(surname);
+    }
+
+    public Optional<Person> getPersonByPesel(String pesel){
+        return personRepository.findOneByPesel(pesel);
     }
 
     //    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public Boolean existsPersonByName(String name){
         return personRepository.findOneByName(name).isPresent();
+    }
+
+    public Boolean existsPersonByPesel(String pesel){
+        return personRepository.findOneByPesel(pesel).isPresent();
     }
 
     public Boolean existsPersonById(Integer id) { return personRepository.findById(id).isPresent(); }
