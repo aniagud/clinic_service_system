@@ -30,15 +30,15 @@ public class Appointment {
     @Column(name = "type")
     private String type;
 
-//    @OneToOne
-//    @JoinColumn(name = "interview")
-//    private Interview interview;
-
     @OneToOne
+    @JoinColumn(name = "interview")
+    private Interview interview;
+
+    @ManyToOne
     @JoinColumn(name = "patient")
     private Patient patient;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "doctor")
     private Doctor doctor;
 }

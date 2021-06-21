@@ -1,11 +1,8 @@
 package com.wzpo.clinic.controller;
 
 import com.wzpo.clinic.dto.InterviewDTO;
-import com.wzpo.clinic.dto.PersonDTO;
 import com.wzpo.clinic.entity.Interview;
-import com.wzpo.clinic.entity.Person;
 import com.wzpo.clinic.service.InterviewService;
-import com.wzpo.clinic.service.PersonService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

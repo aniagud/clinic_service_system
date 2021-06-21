@@ -14,7 +14,7 @@ public interface PatientRepository  extends JpaRepository<Patient,Long>{
     Optional<Patient> findOneById(Long id);
     Optional<Patient> findOneByPerson(Person person);
 
-    List<Patient> findOneByPerson_Id(Integer id);
+    Optional<Patient> findOneByPerson_Id(Integer id);
     List<Patient> findAllByPerson_Name(String name);
 //    List<Patient> findAllByPerson_NameAndPerson_RoleLikePatient(String name);
     List<Patient> findAllByPerson_Surname(String surname);
