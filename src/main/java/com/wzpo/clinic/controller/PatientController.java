@@ -93,7 +93,7 @@ public class PatientController {
             patientService.updatePatient(dto,id);
             return ResponseEntity.status(HttpStatus.OK).build();
         }catch (Exception e){
-            log.error(MessageFormat.format("Exception while trying to update vocabulary with id {0}",id),e);
+            log.error(MessageFormat.format("Exception while trying to update patient with id {0}",id),e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
