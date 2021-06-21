@@ -78,7 +78,7 @@ public class PersonController {
 
     @PutMapping("/update/{id}")
 //    @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Person> updatePerson(@PathVariable("id") String id, @RequestBody Person person){
+    public ResponseEntity<Person> updatePerson(@PathVariable("id") Integer id, @RequestBody Person person){
 
         try{
             personService.updatePerson(person);
