@@ -50,7 +50,7 @@ public class PersonController {
     public Person showPersonByPesel(@PathVariable("pesel") String pesel){
 
         Person person = personService.getPersonByPesel(pesel)
-                .orElseThrow( () -> new IllegalArgumentException("Invalid category name: " + pesel));
+                .orElseThrow( () -> new IllegalArgumentException("Invalid personal pesel: " + pesel));
 
         return person;
     }
