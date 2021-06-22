@@ -9,17 +9,17 @@ import java.sql.Date;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AppointmentDTO {
+public class ExaminationDTO {
 
     private Date date;
 
-    private String time;
+    private String name;
 
     private String type;
 
-    private InterviewDTO interviewDTO;
+    private String results;
 
-    private PatientDTO patientDTO;
+    private String description;
 
-    private DoctorDTO doctorDTO;
+    private AppointmentDTO appointmentDTO;
 }
